@@ -1,5 +1,3 @@
-# cyberbulling_detection_project_template 
+# cyberbulling_detection_data
 
-This project is to implement cyberbullying detection in social media. 
-
-This repository is a standard generic template for further development of this project.
+ This repository is a part of Cyberbullying detection project where this repository purpose is to add DVC and datasets access to the project. 
