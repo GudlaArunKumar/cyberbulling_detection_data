@@ -4,8 +4,8 @@ services:
   app:
     user: "${USER_ID:-1000}"
     hostname: "${HOST_NAME:-arun}"
-    image: cybulde-template
-    container_name: cybulde-template-container
+    image: cybulde-data
+    container_name: cybulde-data-container
     build:
       context: .
       dockerfile: ./docker/Dockerfile
@@ -17,16 +17,8 @@ services:
     volumes:
       - ./:/app/
       - ~/.config/gcloud/:/home/${USER_NAME:-arunkumar}/.config/gcloud
+      - ~/.ssh:/home/${USER_NAME:-arunkumar}/.ssh
     ports:
-      - 8080:8080
-
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-
+      - 8888:8888
     ipc: host
     init: true

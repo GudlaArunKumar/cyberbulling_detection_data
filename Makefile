@@ -13,7 +13,7 @@ else
 endif
 
 SERVICE_NAME = app
-CONTAINER_NAME = cybulde-template-container
+CONTAINER_NAME = cybulde-data-container
 
 
 DIRS_TO_VALIDATE = cybulldetection
@@ -26,9 +26,9 @@ export  # export here is to export ENV variables to whole project
 guard-%:
 	@#$(or ${$*}, $(error $* is not set))
 
-## Call entrypoint
-entrypoint: up
-	$(DOCKER_COMPOSE_EXEC) python ./cybulldetection/entrypoint.py
+## Version data
+version-data: up
+	$(DOCKER_COMPOSE_EXEC) python ./cybulldetection/version_data.py
 
 ## Starts jupyter lab
 notebook: up
