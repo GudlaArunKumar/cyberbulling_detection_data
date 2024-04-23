@@ -6,7 +6,9 @@ from pydantic.dataclasses import dataclass
 
 @dataclass
 class Config:
-    hello: str = "world"
+    dvc_remote_name: str = "gcs-storage"
+    dvc_remote_url: str = "gs://cybull_detection/data/raw"
+    dvc_raw_folder_data: str = "./data/raw"
 
 
 def setup_config() -> None:
