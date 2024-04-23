@@ -37,7 +37,7 @@ def commit_to_dvc(dvc_raw_folder_data: str, dvc_remote_name: str) -> None:
     """
     function to update the verison of data in dvc and also in git
     """
-
+    # below command takes the latest version number for the tracked dvc data
     current_version = run_shell_command("git tag --list | sort -t v -k 2 -g | tail -1 | sed 's/v//'").strip()
     if not current_version: # if there is no version of the data
         current_version = "0"
